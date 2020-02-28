@@ -3,4 +3,4 @@ my repository
 
 branch3
   
-  test
+  test.
