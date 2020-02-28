@@ -1,6 +1,6 @@
 # MineP
 my repository
 
-<<branch3>>
+branch3
   
   test
