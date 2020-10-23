@@ -2,9 +2,10 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>JQuery 1</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<title>JQuery 1</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 
@@ -17,190 +18,193 @@
 <!-- ================================================ -->
 
 <script type="text/javascript">
-
 	var i = 0;
 
-	$(document).ready(function () {
+	$(document).ready(function() {
 
 		//-------------------예시------------------------
-		$("button").click(function () {
+		$("button").click(function() {
 			$("p").hide(); //"셀렉터 안에 들어가는건 태그인가 봄"
 
 			//이렇게 쓰거나 1
 		});
 
-
-		$(function () {
+		$(function() {
 			//이렇게 쓰거나 2
 
 		});
 
-
 		//----------------------예시--------------------------
 
-		$("#test1").click(function () {
+		$("#test1").click(function() {
 			$(this).hide();
 		});
 
 		//---------------------------------------------------
 
-
-		$("#test2").keypress(function () {
+		$("#test2").keypress(function() {
 			$("#sp1").text(i += 1);
 		});
 		//-------------------------------------------------------
 
-		$("#test3").on("click", function () {
+		$("#test3").on("click", function() {
 			alert("사용방법1 = 클릭하면 알림뜬다");
 		});
 
 		//-------------------------------------------------------
-		$("#test4").on({   //on()은 여러 이벤트 핸들러들을 연결한다 // 사용방법 2
+		$("#test4").on({ //on()은 여러 이벤트 핸들러들을 연결한다 // 사용방법 2
 
-			mouseenter: function () {
+			mouseenter : function() {
 				$(this).css("background-color", "red");
 			},
 
-			click: function () {
+			click : function() {
 				$(this).hide();
 			}
 		});
 
-		$("#test4-1").click(function(){
+		$("#test4-1").click(function() {
 			$("#test4").show("fast");
 		});
 
 		//-------------------------------------------------------
 		$("#test5").hover(
 
+		function() {
+			console.log("오늘은 금요일");
+		},//func1
 
-			function () {
-				console.log("오늘은 금요일");
-			},//func1
+		function() {
+			console.log("아니 함수가 두번 쓸 수 있네");
+		}//func2
 
-			function () {
-				console.log("아니 함수가 두번 쓸 수 있네");
-			}//func2
+		//마지막 함수는 실행이 안된다...함수는 두번까지만 가능한듯!!
+		//함수 두개가 합쳐진거라 두개만 가능한건가!!
 
-
-			//마지막 함수는 실행이 안된다...함수는 두번까지만 가능한듯!!
-			//함수 두개가 합쳐진거라 두개만 가능한건가!!
-
-			/* 	    function(){
-							console.log("ㅎㅎ 세번은 안되네......");
-						}//func3
-			 */
+		/* 	    function(){
+						console.log("ㅎㅎ 세번은 안되네......");
+					}//func3
+		 */
 
 		);//hover
 
-
+		//-------------------------------------------------------
+		$("#btn1").click(function() {
+			$("#toggle").toggle();
+		});
 
 		//-------------------------------------------------------
-	$("#btn1").click(function(){
-		$("#toggle").toggle();
-	});
-	
-
+		$("#fo").click(function() {
+			$(this).fadeOut();
+		});
 		//-------------------------------------------------------
-
-
-		//-------------------------------------------------------
-
-
+		$("#ft").click(function(){
+			$(this).fadeTo("fast",0.2);
+			
+		});
+		
+		
+		
+		
+		
+		
 		//-------------------------------------------------------
 		$("#st5").hover(
 
+		function() {
+			console.log("오늘 점심메뉴는 뭐지");
+		},//func1
 
-			function () {
-				console.log("오늘 점심메뉴는 뭐지");
-			},//func1
+		function() {
+			console.log("아니 함수가 두번 쓸 수 있네");
+		}//func2
 
-			function () {
-				console.log("아니 함수가 두번 쓸 수 있네");
-			}//func2
+		//마지막 함수는 실행이 안된다...함수는 두번까지만 가능한듯!!
+		//함수 두개가 합쳐진거라 두개만 가능한건가!!
 
-
-			//마지막 함수는 실행이 안된다...함수는 두번까지만 가능한듯!!
-			//함수 두개가 합쳐진거라 두개만 가능한건가!!
-
-			/* 	    function(){
-							console.log("ㅎㅎ 세번은 안되네......");
-						}//func3
-			 */
+		/* 	    function(){
+						console.log("ㅎㅎ 세번은 안되네......");
+					}//func3
+		 */
 
 		);//hover
 
-
 		//-------------------------------------------------------
-		$("#fb input").focus(function () {
+		$("#fb input").focus(function() {
 			$(this).css("background-color", "#ffcecc");
 
 		});
 		//-------------------------------------------------------
 
-		$("#fb input").blur(function () {
+		$("#fb input").blur(function() {
 			$(this).css("background-color", "#b3baff");
 
 		});
 		//-------------------------------------------------------
-
-
+		$("")
+		
+		
 		//-------------------------------------------------------
-		$("#event1").click(function () {
-			$(this).hide();
-		});//event1
-
-
-
-
+	
 
 	});//document.ready
-		</script>
-		
-		
-		<!-- ================================================ -->
-		<!-- =====================HTML======================= -->
-		<!-- ================================================ -->
-		
-		
-		<body>
-		
-			<div>
-				<p id="test1">
-					<strong>mouseenter</strong>는 마우스 커서가 위로 올라가면 이벤트 실행됨
-				</p>
-			</div>
-			<br />
-			<!-- ----------------------------------------------------------- -->
-			<div>
-				<p>입력 : <input id="test2" type="text" /></p> keypress는 뭐지??
-				<strong>key를 누를때마다 여기에 값이 추가돼요 => </strong><span id="sp1">0</span>
-			</div>
-			<br />
-			<!-- ----------------------------------------------------------- -->
-			<div>
-				<strong id="test3">test3: 클릭하면 alert</strong>안녕하세요<br>
-				
-				<strong id="test4">test4: 마우스 올리면 색변하고, 클릭하면 사라짐</strong>
-				<p id="test4-1">=>오늘은 금요일.클릭하면 다시 나타나!</p><br>
-				
-				<strong id="test5">test5: 콘솔창을 보시오</strong>점심에 부대찌개먹음<br>
-			</div>
-			<br />
+</script>
 
+
+<!-- ================================================ -->
+<!-- =====================HTML======================= -->
+<!-- ================================================ -->
+
+
+<body>
+
+	<div>
+		<p id="test1">
+			<strong>mouseenter</strong>는 마우스 커서가 위로 올라가면 이벤트 실행됨
+		</p>
+	</div>
+	<br />
 	<!-- ----------------------------------------------------------- -->
 	<div>
-		<strong id="toggle">toggle키임</strong>
-		<br />
-		<button id="btn1"><strong id="toggle">누르면 접었다 펼쳤다 가능</strong></button>
+		<p>
+			입력 : <input id="test2" type="text" />
+		</p>
+		keypress는 뭐지?? <strong>key를 누를때마다 여기에 값이 추가돼요 => </strong><span
+			id="sp1">0</span>
+	</div>
+	<br />
+	<!-- ----------------------------------------------------------- -->
+	<div>
+		<strong id="test3">test3: 클릭하면 alert</strong>안녕하세요<br> <strong
+			id="test4">test4: 마우스 올리면 색변하고, 클릭하면 사라짐</strong>
+		<p id="test4-1">=>오늘은 금요일.클릭하면 다시 나타나!</p>
+		<br> <strong id="test5">test5: 콘솔창을 보시오</strong>점심에 부대찌개먹음<br>
 	</div>
 	<br />
 
 	<!-- ----------------------------------------------------------- -->
 	<div>
-		<strong id="st5">hover</strong>콘솔창을 보세요
+		<strong id="toggle">toggle키임</strong> <br />
+		<button id="btn1">
+			<strong id="toggle">누르면 접었다 펼쳤다 가능</strong>
+		</button>
 	</div>
 	<br />
+
+	<!-- ----------------------------------------------------------- -->
+	<div>
+		<strong id="fo">fade out 실습~</strong>
+	</div>
+	<br />
+	<!-- ----------------------------------------------------------- -->
+	<div>
+		<p id="ft">fade To 실습~</p>
+	</div>
+	<br />
+	<!-- ----------------------------------------------------------- -->
+
+
+
 
 
 
@@ -222,12 +226,9 @@
 
 
 	<div id="fb">
-		<label for="">focus/blur의 실습을 위한 input임</label>
-		<br />
-		Name: <input type="text" placeholder="이름을 적어주세요." />
-		<br />
-		Emali: <input type="text" placeholder="이메일을 적어주세요." />
-		<br />
+		<label for="">focus/blur의 실습을 위한 input임</label> <br /> Name: <input
+			type="text" placeholder="이름을 적어주세요." /> <br /> Emali: <input
+			type="text" placeholder="이메일을 적어주세요." /> <br />
 	</div>
 
 
