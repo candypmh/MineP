@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+
+    <!-- JQuery를 쓰려면 필수 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $("#test_table tr:odd").hide();
+
+            $("#test_table tr:odd").css("background-color","#bea6ff");
+
+
+
+
+
+
+
+
+
+
+
+        });//ready
+    </script>
+</head>
+
+<body>
+    <!-- 테이블 실습을 하려면 테이블을 만들어야 함 -->
+
+    <h1>실습용 테이블</h1>
+
+    <table border="1" id="test_table">
+        <tr>
+            <!-- tr:행 / td:열 -->
+            <th>1열</th>
+            <th>2열</th>
+            <th>3열</th>
+        </tr>
+
+
+        <tr>
+            <td>apple 1</td>
+            <td>banana 1</td>
+            <td>lemon 1</td>
+        </tr>
+
+        <tr>
+            <td>apple 2</td>
+            <td>banana 2</td>
+            <td>lemon 2</td>
+        </tr>
+
+        <tr>
+            <td>apple 3</td>
+            <td>banana 3</td>
+            <td>lemon 3</td>
+        </tr>
+
+        <tr>
+            <td>apple 4</td>
+            <td>banana 4</td>
+            <td>lemon 4</td>
+        </tr>
+
+        <tr>
+            <td>apple 5</td>
+            <td>banana 5</td>
+            <td>lemon 5</td>
+        </tr>
+
+    </table>
+
+
+
+</body>
+
+</html>
