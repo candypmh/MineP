@@ -98,17 +98,26 @@ select empno, ename, sal from emp where sal >= 1200 and sal <= 3500;
 select empno, ename, sal from emp where sal between 1200 and 3500;
 
 -- 직급이 매니저이고 부서번호가 30번인 사원의 이름,사번,직급,부서번호를 조회하시오.
+select ename, empno, job, deptno  from emp where deptno=30 and job='MANAGER';
 
 -- 부서번호가 30인 아닌 사원의 사번,이름,부서번호를 조회하시오.
+select empno,ename,deptno from emp where not deptno = 30;
 
 -- 커미션이 300, 500, 1400 이 모두 아닌 사원의 사번,이름,커미션을 조회하시오.
+select empno,ename,comm from emp where comm not in(300,500,1400); 
 
 -- 이름에 S가 포함되지 않는 사원의 사번,이름을 조회하시오.
+select empno,ename from emp where ename not like '%S%';
 
 -- 급여가 1200보다 미만이거나 3700 초과하는 사원의 사번,이름,월급여를 조회하시오.
+select empno,ename,sal from emp where sal > 3700 or sal < 1200;
+select empno, ename, sal from emp where sal not between 1200 and 3700; 
 
 -- 직속상사가 NULL 인 사원의 이름과 직급을 조회하시오.
+select ename, job from emp where mgr is null;
 
+
+-- GROUP BY
 -- 부서별 평균월급여를 구하는 쿼리
 
 -- 부서별 전체 사원수와 커미션을 받는 사원들의 수를 구하는 쿼리
