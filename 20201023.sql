@@ -117,46 +117,99 @@ select empno, ename, sal from emp where sal not between 1200 and 3700;
 select ename, job from emp where mgr is null;
 
 
--- GROUP BY
+-- GROUP BY --------------------------------------------
 -- 부서별 평균월급여를 구하는 쿼리
+select  deptno , avg(sal) as '평균월급' from emp group by deptno;
 
 -- 부서별 전체 사원수와 커미션을 받는 사원들의 수를 구하는 쿼리
+select deptno, count(empno), count(comm) from emp group by deptno;
 
 -- 부서별 최대 급여와 최소 급여를 구하는 쿼리
+select deptno, max(sal), min(sal) from emp group by deptno;
+
 
 -- 부서별로 급여 평균 (단, 부서별 급여 평균이 2000 이상만)
+select deptno,avg(sal) from emp group by deptno having avg(sal) >= 2000 ;
 
 -- 월급여가 1000 이상인 사원만을 대상으로 부서별로 월급여 평균을 구하라. 단, 평균값이 2000 이상인 레코드만 구하라.
+select deptno, avg(sal) 
+from emp 
+where sal>=1000
+group by deptno 
+having avg(sal) >= 2000;
 
 -- 급여가 높은 순으로 조회하되 급여가 같을 경우 이름의 철자가 빠른 사원순으로 사번,이름,월급여를 조회하시오.
+select empno, ename, sal 
+from emp 
+order by sal desc, ename asc ;
 
--- 카테시안 곱
-
+-- JOIN ---------------------------------------------
 -- 사원명과 부서명을 조회하시오.
+select emp.ename, dept.dname 
+from emp,dept;
+
+select e.ename, d.dname 
+from emp e,dept d;
 
 -- 이름,월급여,월급여등급을 조회하시오.
+select e.ename, e.sal, s.grade from emp e, salgrade s
+where e.sal >= s.losal and e.sal <=s.hisal;
 
 -- 이름,부서명,월급여등급을 조회하시오.
+select e.ename, d.dname, s.grade 
+from emp e, dept d, salgrade s
+where e.deptno = d.deptno
+and e.sal between s.losal and s.hisal;
 
 -- 이름,직속상사이름을 조회하시오.
+select e.ename, em.ename as '직속상사'
+from emp e, emp em
+where e.empno = em.mgr;
 
 -- 이름,부서명을 조회하시오.단, 사원테이블에 부서번호가 40에 속한 사원이 없지만 부서번호 40인 부서명도 출력되도록 하시오.
+select e.ename, d.dname 
+from emp e 
+join dept d
+on d.deptno = e.deptno;
 
 -- 이름,부서번호,부서이름을 조회하시오.
+select ename, e.deptno, dname 
+from emp e, dept d 
+where e.deptno = d.deptno;
 
 -- 부서번호가 30번인 사원들의 이름, 직급, 부서번호, 부서위치를 조회하시오.
+select ename, job, e.deptno, loc 
+from emp e, dept d
+where e.deptno = d.deptno and d.deptno=30;
 
 -- 커미션을 받는 사원의 이름, 커미션, 부서이름,부서위치를 조회하시오.
+select ename, comm, dname, loc 
+from emp e, dept d 
+where e.deptno = d.deptno and comm is not null and comm != 0;
+-- where e.deptno = d.deptno and comm is not null and comm not in(0);
 
 -- DALLAS에서 근무하는 사원의 이름,직급,부서번호,부서명을 조회하시오.
+select ename, job, d.deptno, dname 
+from emp e, dept d
+where e.deptno = d.deptno and loc = 'DALLAS';
 
 -- 이름에 A 가 들어가는 사원의 이름,부서명을 조회하시오.
+select ename, dname from emp e, dept d 
+where e.deptno = d.deptno and ename like '%A%';
 
 -- 이름, 직급, 월급여, 월급여등급을 조회하시오.
+select e.ename, e.job, e.sal, s.grade from emp e, salgrade s
+where sal between s.losal and s.hisal;
 
--- ALLEN과 같은 부서에 근무하는 사원의 이름, 부서번호를 조회하시오.
+-- ALLEN과 같은 부서에 근무하는 사원의 이름, 부서번호를 조회하시오★★★★★
+select em.ename, em.deptno from emp e, emp em
+where e.empno != em.empno and e.deptno = em.deptno and e.ename='ALLEN'
+order by em.ename;
 
+-- 서브쿼리 --------------------------------------------------
 -- 사원명 'JONES'가 속한 부서명을 조회하시오.
+select dname from dept 
+where deptno = (select deptno from emp where ename = 'JONES');
 
 -- 10번 부서에서 근무하는 사원의 이름과 10번 부서의 부서명을 조회하시오.
 
@@ -165,3 +218,5 @@ select ename, job from emp where mgr is null;
 -- 부서번호가 10인 사원중에서 최대급여를 받는 사원과 동일한 급여를 받는 사원의 사원번호, 이름을 조회하시오.
 
 -- 출처: https://junetudie.tistory.com/11 [공부하는 주니어 개발자]
+
+
