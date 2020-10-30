@@ -41,22 +41,22 @@ public class Solution {
 		System.out.println(temp);
 		System.out.println("야:"+temp.length());
 		
-		String[] strarr = new String[temp.length()];
-		char str;
+		String[] strarr = new String[temp.length()];//한자씩 담을 용도 {1,2,3,4,5}
+		char str; //한자씩 자를 매개체
 		
 		
 		for(int i = temp.length()-1; i >= 0; i--) { //43210
-			str = temp.charAt(i);
+			str = temp.charAt(i); //5,4,3,2,1
 			
 			System.out.println(str+",");
 			
-			strarr[temp.length()-1-i] = String.valueOf(str);
+			strarr[temp.length()-1-i] = String.valueOf(str); //{5,4,3,2,1} 이렇게 집어넣기
 		}
 		System.out.println(Arrays.toString(strarr));
 		
 		for(int i = 0; i <strarr.length; i++) {
 			System.out.println(i);
-			answer[i] = Integer.parseInt(strarr[i]);
+			answer[i] = Integer.parseInt(strarr[i]); // String배열을 int배열에 넣기
 			
 			
 			

@@ -32,26 +32,26 @@ public class Solution1_test {
 
 	public static void main(String[] args) {
 		
+		
 		//1. String
 		
 		long n = 12345;
 		String temp = String.valueOf(n);  //temp = "12345"'
 		int[] answer = new int[temp.length()];
-	
-		String[] strarr = new String[temp.length()];
-		char str;
+		
+		String[] strarr = new String[temp.length()];//한자씩 담을 용도 {1,2,3,4,5}
+		char str; //한자씩 자를 매개체
 		
 		
-		for(int i = temp.length()-1; i >= 0; i--) { //43210
-			str = temp.charAt(i);
-			strarr[temp.length()-1-i] = String.valueOf(str);
+		for(int i = temp.length()-1; i >= 0; i--) { //index 43210
+			str = temp.charAt(i); //5,4,3,2,1
+			strarr[temp.length()-1-i] = String.valueOf(str); //{5,4,3,2,1} 이렇게 집어넣기
 		}
-		
 		
 		for(int i = 0; i <strarr.length; i++) {
-			answer[i] = Integer.parseInt(strarr[i]);
+			answer[i] = Integer.parseInt(strarr[i]); // String배열을 int배열에 넣기
 		}
-	
+		
 	}
 
 }
