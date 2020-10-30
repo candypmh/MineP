@@ -56,14 +56,10 @@ public class Solution {
 		String[] strings = {"sun", "bed", "car"};
 		String[] answer = new String[strings.length];
 		
-		HashMap<Integer, String> map = new HashMap();
 		int n = 1;
 //		String[] strings = {"abce", "abcd", "cdx"};
 		
-		
-		
-		
-		
+	
 		for(int i = 0; i < strings.length; i++) {
 			strings[i] = strings[i].charAt(n)+strings[i]; // usun, ebed, acar
 			}
@@ -78,12 +74,9 @@ public class Solution {
 		
 		//return answer;
 		
-		
-		
-		
 		System.out.println("으아아악");
 		System.out.println(Arrays.toString(answer));
-		
+	
 
 	}
 
