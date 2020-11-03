@@ -1,4 +1,4 @@
-package study20201026_1;
+package 대소문자변환;
 
 public class Test {
 

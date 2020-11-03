@@ -24,6 +24,7 @@ n	return
     }
 }
  
+//https://programmers.co.kr/learn/courses/30/lessons/12932
  
  
  */
@@ -32,12 +33,11 @@ public class Solution1_test {
 
 	public static void main(String[] args) {
 		
-		
 		//1. String
 		
 		long n = 12345;
-		String temp = String.valueOf(n);  //temp = "12345"'
-		int[] answer = new int[temp.length()];
+		String temp = String.valueOf(n);  //temp = "12345"
+		int[] answer = new int[temp.length()];//5
 		
 		String[] strarr = new String[temp.length()];//한자씩 담을 용도 {1,2,3,4,5}
 		char str; //한자씩 자를 매개체
