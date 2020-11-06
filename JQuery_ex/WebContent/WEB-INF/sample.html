@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+
+{
+    "layout": {
+        "type": "1",
+        "width": "800",
+        "cls": "grid_1"
+    }
+,
+    "grid": {
+        "type": "grid",
+        "page": {
+            "pagesize": 30,
+            "visible": true
+        }
+,
+        "fields": [
+
+{
+                "id": "mbz1001_business_name",
+                "alias": "사업명",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 1,
+                "format": null,
+                "handler": "view"
+}
+,
+{
+                "id": "mbz1001_id",
+                "alias": "사업코드",
+                "w": "0",
+                "align": "center",
+                "ellipse": "1",
+                "order": 2,
+                "format": "null"
+            }
+,
+            {
+                "id": "mbz1001_reg_dttm",
+                "alias": "신청(등록)일",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 2,
+                "format": null,
+                "handler": "view"
+            },
+            {
+                "id": "mbz1001_reg_dttm",
+                "alias": "신청(등록)일",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 2,
+                "format": null,
+                "handler": "view"
+            },
+
+
+
+
+
+
+
+
+
+
+
+            {
+                "id": "mbz1001_reg_dttm",
+                "alias": "신청(등록)일",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 2,
+                "format": null,
+                "handler": "view"
+            }
+,
+            {
+                "id": "mbz1001_business_type_name",
+                "alias": "사업구분",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 3,
+                "format": null
+            }
+
+,
+            {
+                "id": "mbz1001_truster_name",
+                "alias": "위탁자명",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 4,
+                "format": null
+            }
+,
+            {
+                "id": "mbz1001_business_outline_addr1",
+                "alias": "주소",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 5,
+                "format": null
+            }
+,
+            {
+                "id": "mbz1001_truster_tel",
+                "alias": "연락처",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 6,
+                "format": null,
+                "orderby_used":"true"
+            }
+,
+
+
+            {
+                "id": "stat_nm",
+                "alias": "진행상태",
+                "w": "100",
+                "align": "center",
+                "ellipse": "1",
+                "order": 7,
+                "format": ""
+            }
+,
+
+            {
+                "id": "mbz1001_mgt_emp_nm",
+                "alias": "신청담당자",
+                "w": 250,
+                "align": "center",
+                "ellipse": "1",
+                "order": 8,
+                "format": null
+            }
+
+        ]
+    }
+,
+"sql_orderby": "mbz1001_id desc",
+    "conditions": {
+         "type": "1",
+        "where": false,
+        "usedetail":true,
+        "fields": [
+            {
+                "id": "mbz1001_reg_dttm",
+                "alias": "신청일",
+                "y": 1,
+                "x": 1,
+                "field_lw": 120,
+                "field_vw": 350,
+                "type": "text",
+                "subtype": "",
+                "def_val": "D-30,D-0",
+                "uiitem": "Date.term"
+              },
+              
+               {
+                "id": "mbz1001_tas_id",
+                "alias": "진행상태",
+                "y": 1,
+                "x": 2,
+                "field_lw": 120,
+                "field_vw": 120,
+                "type": "code",
+                "subtype": "",
+                "def_val": "",
+                "uiitem": "Ent.Task.Select",
+                "uiitem_args":"MBZ1001"
+            },
+            
+               {
+                "id": "mbz1001_truster_name",
+                "alias": "위탁자",
+                "y": 1,
+                "x": 3,
+                "field_lw": 120,
+                "field_vw": 120,
+                "type": "text",
+                "subtype": "",
+                "def_val": "",
+                "uiitem": ""
+            }
+,
+            {
+                "id": "mbz1001_business_outline_addr1",
+                "alias": "주소",
+                "y": 1,
+                "x": 4,
+                "field_lw": 120,
+                "field_vw": 120,
+                "type": "text",
+                "subtype": "",
+                "def_val": "",
+                "uiitem": ""
+            }
+    
+     ]
+    
+}
+,
+    "sql_args": {
+        "id": "cond",
+        "where": true,
+        "stmts": [
+         {
+                "alias": "",
+                "stmt": "mbz1001_reg_dttm between concat(? , '000000') and concat(? , '235959') ",
+                "params": [
+                    "sdate",
+                    "edate"
+                ],
+                "require": false,
+                "valmap": [],
+                "cond_id": "mbz1001_reg_dttm"
+            }
+,
+            {
+                "alias": "",
+                "stmt": "mbz1001_tas_id = ? ",
+                "params": [
+                    "mbz1001_tas_id"
+                ],
+                "require": false,
+                "valmap": null,
+                "cond_id": "mbz1001_tas_id"
+            }
+,
+            {
+                "alias": "",
+                "stmt": "mbz1001_truster_name like ? ",
+                "params": [
+                    "mbz1001_truster_name"
+                ],
+                "require": false,
+                "valmap": [
+                    "mbz1001_truster_name:11"
+                ],
+                "cond_id": "mbz1001_truster_name"
+            }
+,
+            {
+                "alias": "",
+                "stmt": "mbz1001_business_outline_addr1 like ? ",
+                "params": [
+                    "mbz1001_business_outline_addr1"
+                ],
+                "require": false,
+                "valmap": [
+                    "mbz1001_business_outline_addr1:11"
+                ],
+                "cond_id": "mbz1001_business_outline_addr1"
+            }
+
+        
+        
+        ]
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      "controls":
+    [
+        {
+        "alias":"신탁신청",
+        "handler":"addbtn1"
+        }
+    ]
+
+
+}
+
+</body>
+</html>
