@@ -6,19 +6,23 @@ public class Test {
 		
 		//----------------------------------------소문자변환
 		
-		String String1 = "MBZ1001_BUSINESS_OUTLINE_ADDR1"; //신청
-		String String2 = "MBZ_LAND_ADDR_ALL";//검토
-		String String3 = "MBZ1001_MGT_EMP_ID";
-//		String String4 = "MBZ_OBTAIN_EMP_ID";
-//		String String5 = "MBZ_MGT_EMP1_ID";
-//		String String6 = "MBZ_MGT_EMP2_ID";
+		String S7 = "MBZ2002_ID";
+		String S8 = "MBZ2002_MBZ2001_ID";
+		String S1 = "MBZ2002_TITLE"; 
+		String S2 = "MBZ2002_DESCR";
+		String S3 = "MBZ2002_REQ_DTTM";
+		String S4 = "MBZ2002_REG_EMP_ID";
+		String S5 = "MBZ2002_DOC_ATT";
+		String S6 = "MBZ2002_CHANGEREQ_MEMO";
 		
-		System.out.println(String1.toLowerCase());
-		System.out.println(String2.toLowerCase());
-		System.out.println(String3.toLowerCase());
-//		System.out.println(String4.toLowerCase());
-//		System.out.println(String5.toLowerCase());
-//		System.out.println(String6.toLowerCase());
+		System.out.println(S7.toLowerCase());
+		System.out.println(S8.toLowerCase());
+		System.out.println(S1.toLowerCase());
+		System.out.println(S2.toLowerCase());
+		System.out.println(S3.toLowerCase());
+		System.out.println(S4.toLowerCase());
+		System.out.println(S5.toLowerCase());
+		System.out.println(S6.toLowerCase());
 
 		
 		
