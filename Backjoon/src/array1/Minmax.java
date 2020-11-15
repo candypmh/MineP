@@ -34,7 +34,6 @@ import java.util.Scanner;
  
  */
 
-
 //내일 열시반 머리 커트!!미용실!!!!
 public class Minmax {
 	public static void main(String[] args) {
