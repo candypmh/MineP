@@ -1,7 +1,9 @@
 package array1;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 //나머지
 /*
@@ -42,6 +44,9 @@ public class Remainder {
 		int[] arr2 = new int[10];
 		int cnt = 0;
 		int answer = 0;
+		
+		
+		Set<Integer> setarr = new HashSet<Integer>();
 
 		for (int i = 0; i < arr1.length; i++) {
 			arr1[i] = sc.nextInt();
@@ -69,7 +74,9 @@ public class Remainder {
 		//arr2:[39, 40, 41, 0, 1, 2, 40, 41, 0, 1]
 		
 		//대체 왜틀렸단건데..ㅡㅡ...이거 왜 에러나 ㅠ
-		//2개이상일경우 생각하기/중복값 => set!!!!!!!!!!!!!
+		//2개이상일경우 생각하기ㅠㅠ/중복값 => set!!!!!!!!!!!!!
+		
+		
 	}
 
 }
