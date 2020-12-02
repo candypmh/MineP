@@ -23,15 +23,72 @@ package string;
  */
 
 import java.util.Arrays;
+//import java.util.Arrays;
+import java.util.Scanner;
 
 public class WordCount_answer {
 	public static void main(String[] args) {
 
-		String s = "The Curious Case of Benjamin Button";
+//		String s = "The Curious Case of Benjamin Button";
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		s = s.trim(); // 문자열 맨앞, 맨뒤의 공백 제거
+		s = s.replace(" ", "."); // 공백을 .으로 치환
+		
+		System.out.println("s:" + "<" + s + ">");
+		
+		int cnt = 0;
+		
+//		boolean tf = false;
 
-		String[] arr = s.split(" ");
-		System.out.println(arr.length);
+		
+		for(int i = 0; i < s.length();i++) {
+			char chr = s.charAt(i);
+			
+			if(chr + "" == ".") {
+				cnt++;
+				String[] arr = s.split(".");
+				System.out.println("맞다:"+Arrays.toString(arr));
+			}
+			
+			if(cnt == 0) {
+				System.out.println("아니다"+ 1);
+			}
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+//		 arr = s.split(".");
+		
+		//한단어일때 어케하지.....
+		//if(s.charAt(i) == 
+		
+//		System.out.println("악:"+Arrays.toString(s));
+
+		// " " -> 이거 하나만 들어왔을때를 생각해야함
+//		if(s.equals(" ")) {
+//			System.out.println(s.length);
+//			System.out.println(s);
+//			System.out.println("으악:"+Arrays.toString(s));
+//		}
+
+//		}else if(s.length == 1) {
+//			System.out.println(s.length);
+//			System.out.println("아악:"+Arrays.toString(s));
+//		}
+
+		// 한단어만 들어올때도 있나?->상관X
+
+		// " "
+		// " a"가 들어올때도 있나?
+		// "a "
+		// " a "
 
 	}
-
 }
